@@ -1,0 +1,16 @@
+program RuricolaOnLine;
+
+uses
+  Vcl.Forms,
+  Unit_Principal in 'Janelas\Unit_Principal.pas' {FrmMenu},
+  Unit_DM in 'DAO\Unit_DM.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmMenu, FrmMenu);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

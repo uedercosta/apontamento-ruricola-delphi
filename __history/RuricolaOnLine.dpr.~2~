@@ -1,0 +1,14 @@
+program RuricolaOnLine;
+
+uses
+  Vcl.Forms,
+  Unit_Principal in 'Janelas\Unit_Principal.pas' {FrmMenu};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmMenu, FrmMenu);
+  Application.Run;
+end.

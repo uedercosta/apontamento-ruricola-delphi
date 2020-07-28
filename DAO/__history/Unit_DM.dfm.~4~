@@ -1,0 +1,164 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 477
+  Width = 665
+  object con: TFDConnection
+    Params.Strings = (
+      'Database=ruricola_db'
+      'User_Name=sa'
+      'Password=1234'
+      'Server=localhost'
+      'DriverID=MSSQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 24
+  end
+  object DriverSQLServer: TFDPhysMSSQLDriverLink
+    Left = 216
+    Top = 16
+  end
+  object WaitCursor: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 328
+    Top = 16
+  end
+  object QryEmpresa: TFDQuery
+    Connection = con
+    SQL.Strings = (
+      'select * from empresas')
+    Left = 40
+    Top = 120
+    object QryEmpresaid_empresa: TLargeintField
+      FieldName = 'id_empresa'
+      Origin = 'id_empresa'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryEmpresanome: TStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      Size = 100
+    end
+    object QryEmpresalogotipo: TStringField
+      FieldName = 'logotipo'
+      Origin = 'logotipo'
+      Size = 255
+    end
+    object QryEmpresaativo: TIntegerField
+      FieldName = 'ativo'
+      Origin = 'ativo'
+      Required = True
+    end
+    object QryEmpresadatacad: TSQLTimeStampField
+      FieldName = 'datacad'
+      Origin = 'datacad'
+    end
+    object QryEmpresadataalt: TSQLTimeStampField
+      FieldName = 'dataalt'
+      Origin = 'dataalt'
+    end
+    object QryEmpresaid_usuario: TLargeintField
+      FieldName = 'id_usuario'
+      Origin = 'id_usuario'
+      Required = True
+    end
+    object QryEmpresaid_usuario_alt: TLargeintField
+      FieldName = 'id_usuario_alt'
+      Origin = 'id_usuario_alt'
+    end
+    object QryEmpresalogradouro: TStringField
+      FieldName = 'logradouro'
+      Origin = 'logradouro'
+      Required = True
+      Size = 40
+    end
+    object QryEmpresanumero: TStringField
+      FieldName = 'numero'
+      Origin = 'numero'
+      Size = 6
+    end
+    object QryEmpresacomplemento: TStringField
+      FieldName = 'complemento'
+      Origin = 'complemento'
+      Size = 40
+    end
+    object QryEmpresabairro: TStringField
+      FieldName = 'bairro'
+      Origin = 'bairro'
+      Required = True
+      Size = 40
+    end
+    object QryEmpresaid_cidade: TLargeintField
+      FieldName = 'id_cidade'
+      Origin = 'id_cidade'
+      Required = True
+    end
+    object QryEmpresacep: TStringField
+      FieldName = 'cep'
+      Origin = 'cep'
+      Required = True
+      Size = 10
+    end
+    object QryEmpresaobservacoes: TStringField
+      FieldName = 'observacoes'
+      Origin = 'observacoes'
+      Size = 3000
+    end
+  end
+  object QryTurmas: TFDQuery
+    CachedUpdates = True
+    Connection = con
+    SQL.Strings = (
+      'SELECT * FROM TURMAS'
+      '')
+    Left = 240
+    Top = 120
+    object QryTurmasid_turma: TLargeintField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'id_turma'
+      Origin = 'id_turma'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object QryTurmasid_empresa: TLargeintField
+      FieldName = 'id_empresa'
+      Origin = 'id_empresa'
+      Required = True
+    end
+    object QryTurmasdatacad: TSQLTimeStampField
+      FieldName = 'datacad'
+      Origin = 'datacad'
+    end
+    object QryTurmasdataalt: TSQLTimeStampField
+      FieldName = 'dataalt'
+      Origin = 'dataalt'
+    end
+    object QryTurmasid_usuario: TLargeintField
+      FieldName = 'id_usuario'
+      Origin = 'id_usuario'
+      Required = True
+    end
+    object QryTurmasid_usuario_alt: TLargeintField
+      FieldName = 'id_usuario_alt'
+      Origin = 'id_usuario_alt'
+    end
+    object QryTurmasativo: TIntegerField
+      FieldName = 'ativo'
+      Origin = 'ativo'
+      Required = True
+    end
+    object QryTurmasdescricao: TStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Required = True
+      Size = 50
+    end
+    object QryTurmascodigo: TLargeintField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      Required = True
+    end
+  end
+end
